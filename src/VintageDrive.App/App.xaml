@@ -1,0 +1,186 @@
+<Application x:Class="VintageDrive.App.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             StartupUri="MainWindow.xaml">
+  <Application.Resources>
+
+    <!-- ══════════ Thème par défaut : VintagePlayers (remplacé à chaud par ThemeEngine) ══════════ -->
+    <SolidColorBrush x:Key="BgBrush" Color="#0A0A1E"/>
+    <SolidColorBrush x:Key="PanelBrush" Color="#191938"/>
+    <SolidColorBrush x:Key="PanelDarkBrush" Color="#12122A"/>
+    <SolidColorBrush x:Key="PeriBrush" Color="#7B7BE8"/>
+    <SolidColorBrush x:Key="DimBorderBrush" Color="#34346A"/>
+    <SolidColorBrush x:Key="GoldBrush" Color="#FFD23F"/>
+    <SolidColorBrush x:Key="GoldTextBrush" Color="#141428"/>
+    <SolidColorBrush x:Key="LavenderBrush" Color="#9D9DE8"/>
+    <SolidColorBrush x:Key="DimBrush" Color="#6A6AA8"/>
+    <SolidColorBrush x:Key="BrightBrush" Color="#EDEDFF"/>
+    <SolidColorBrush x:Key="MagentaBrush" Color="#FF2E97"/>
+    <SolidColorBrush x:Key="CyanBrush" Color="#35E0E8"/>
+    <SolidColorBrush x:Key="RedBrush" Color="#FF3B5C"/>
+    <SolidColorBrush x:Key="GreenBrush" Color="#3EE873"/>
+    <SolidColorBrush x:Key="OrangeBrush" Color="#FF9F2E"/>
+
+    <!-- Fond : navy + grille de carrés 28 px (régénéré par ThemeEngine au changement de thème) -->
+    <DrawingBrush x:Key="WindowGridBrush" TileMode="Tile" Viewport="0,0,28,28" ViewportUnits="Absolute" Stretch="None">
+      <DrawingBrush.Drawing>
+        <DrawingGroup>
+          <GeometryDrawing Brush="#0A0A1E">
+            <GeometryDrawing.Geometry>
+              <RectangleGeometry Rect="0,0,28,28"/>
+            </GeometryDrawing.Geometry>
+          </GeometryDrawing>
+          <GeometryDrawing>
+            <GeometryDrawing.Pen>
+              <Pen Brush="#127B7BE8" Thickness="1"/>
+            </GeometryDrawing.Pen>
+            <GeometryDrawing.Geometry>
+              <GeometryGroup>
+                <LineGeometry StartPoint="0,0.5" EndPoint="28,0.5"/>
+                <LineGeometry StartPoint="0.5,0" EndPoint="0.5,28"/>
+              </GeometryGroup>
+            </GeometryDrawing.Geometry>
+          </GeometryDrawing>
+        </DrawingGroup>
+      </DrawingBrush.Drawing>
+    </DrawingBrush>
+
+    <!-- ══════════ Polices embarquées ══════════ -->
+    <FontFamily x:Key="PxFont">pack://application:,,,/Assets/Fonts/#Silkscreen</FontFamily>
+    <FontFamily x:Key="MonoFont">pack://application:,,,/Assets/Fonts/#VT323</FontFamily>
+
+    <!-- ══════════ Textes ══════════ -->
+    <Style x:Key="Txt" TargetType="TextBlock">
+      <Setter Property="FontFamily" Value="{StaticResource MonoFont}"/>
+      <Setter Property="FontSize" Value="19"/>
+      <Setter Property="Foreground" Value="{DynamicResource BrightBrush}"/>
+      <Setter Property="TextOptions.TextFormattingMode" Value="Display"/>
+    </Style>
+    <Style x:Key="Px" TargetType="TextBlock">
+      <Setter Property="FontFamily" Value="{StaticResource PxFont}"/>
+      <Setter Property="FontSize" Value="13"/>
+      <Setter Property="Foreground" Value="{DynamicResource BrightBrush}"/>
+      <Setter Property="TextOptions.TextFormattingMode" Value="Display"/>
+    </Style>
+
+    <!-- ══════════ Boutons pixel (ombre dure + enfoncement) ══════════ -->
+    <Style x:Key="PixelButton" TargetType="Button">
+      <Setter Property="FontFamily" Value="{StaticResource PxFont}"/>
+      <Setter Property="FontWeight" Value="Bold"/>
+      <Setter Property="FontSize" Value="13"/>
+      <Setter Property="Padding" Value="14,11"/>
+      <Setter Property="Cursor" Value="Hand"/>
+      <Setter Property="TextOptions.TextFormattingMode" Value="Display"/>
+      <Setter Property="Template">
+        <Setter.Value>
+          <ControlTemplate TargetType="Button">
+            <Grid>
+              <Border Background="Black" Margin="3,3,0,0"/>
+              <Border x:Name="Face" Background="{TemplateBinding Background}"
+                      BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="2"
+                      Margin="0,0,3,3" Padding="{TemplateBinding Padding}">
+                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+              </Border>
+            </Grid>
+            <ControlTemplate.Triggers>
+              <Trigger Property="IsMouseOver" Value="True">
+                <Setter TargetName="Face" Property="Opacity" Value="0.9"/>
+              </Trigger>
+              <Trigger Property="IsPressed" Value="True">
+                <Setter TargetName="Face" Property="Margin" Value="2,2,1,1"/>
+              </Trigger>
+              <Trigger Property="IsEnabled" Value="False">
+                <Setter Property="Opacity" Value="0.35"/>
+              </Trigger>
+            </ControlTemplate.Triggers>
+          </ControlTemplate>
+        </Setter.Value>
+      </Setter>
+    </Style>
+    <Style x:Key="BtnGold" TargetType="Button" BasedOn="{StaticResource PixelButton}">
+      <Setter Property="Background" Value="{DynamicResource GoldBrush}"/>
+      <Setter Property="BorderBrush" Value="{DynamicResource BgBrush}"/>
+      <Setter Property="Foreground" Value="{DynamicResource GoldTextBrush}"/>
+    </Style>
+    <Style x:Key="BtnOutline" TargetType="Button" BasedOn="{StaticResource PixelButton}">
+      <Setter Property="Background" Value="Transparent"/>
+      <Setter Property="BorderBrush" Value="{DynamicResource PeriBrush}"/>
+      <Setter Property="Foreground" Value="{DynamicResource LavenderBrush}"/>
+    </Style>
+    <Style x:Key="BtnDanger" TargetType="Button" BasedOn="{StaticResource PixelButton}">
+      <Setter Property="Background" Value="Transparent"/>
+      <Setter Property="BorderBrush" Value="{DynamicResource RedBrush}"/>
+      <Setter Property="Foreground" Value="{DynamicResource RedBrush}"/>
+    </Style>
+
+    <!-- Chip de pied de page (liens, aide) : petit, sans ombre -->
+    <Style x:Key="FootChip" TargetType="Button">
+      <Setter Property="FontFamily" Value="{StaticResource MonoFont}"/>
+      <Setter Property="FontSize" Value="16"/>
+      <Setter Property="Padding" Value="8,0"/>
+      <Setter Property="Cursor" Value="Hand"/>
+      <Setter Property="Background" Value="Transparent"/>
+      <Setter Property="Template">
+        <Setter.Value>
+          <ControlTemplate TargetType="Button">
+            <Border x:Name="Face" Background="{TemplateBinding Background}"
+                    BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="1"
+                    Padding="{TemplateBinding Padding}">
+              <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </Border>
+            <ControlTemplate.Triggers>
+              <Trigger Property="IsMouseOver" Value="True">
+                <Setter TargetName="Face" Property="Opacity" Value="0.8"/>
+              </Trigger>
+            </ControlTemplate.Triggers>
+          </ControlTemplate>
+        </Setter.Value>
+      </Setter>
+    </Style>
+
+    <!-- ══════════ Panneau pixel (ombre dure) ══════════ -->
+    <Style x:Key="Card" TargetType="ContentControl">
+      <Setter Property="Background" Value="{DynamicResource PanelBrush}"/>
+      <Setter Property="BorderBrush" Value="{DynamicResource DimBorderBrush}"/>
+      <Setter Property="Padding" Value="16,13"/>
+      <Setter Property="Template">
+        <Setter.Value>
+          <ControlTemplate TargetType="ContentControl">
+            <Grid>
+              <Border Background="Black" Margin="4,4,0,0"/>
+              <Border Background="{TemplateBinding Background}"
+                      BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="2"
+                      Margin="0,0,4,4" Padding="{TemplateBinding Padding}">
+                <ContentPresenter/>
+              </Border>
+            </Grid>
+          </ControlTemplate>
+        </Setter.Value>
+      </Setter>
+    </Style>
+
+    <!-- ══════════ Champs de saisie ══════════ -->
+    <Style x:Key="Input" TargetType="TextBox">
+      <Setter Property="FontFamily" Value="{StaticResource MonoFont}"/>
+      <Setter Property="FontSize" Value="18"/>
+      <Setter Property="Foreground" Value="{DynamicResource BrightBrush}"/>
+      <Setter Property="Background" Value="{DynamicResource PanelDarkBrush}"/>
+      <Setter Property="BorderBrush" Value="{DynamicResource PeriBrush}"/>
+      <Setter Property="BorderThickness" Value="2"/>
+      <Setter Property="Padding" Value="8,3"/>
+      <Setter Property="CaretBrush" Value="{DynamicResource GoldBrush}"/>
+      <Style.Triggers>
+        <Trigger Property="IsKeyboardFocused" Value="True">
+          <Setter Property="BorderBrush" Value="{DynamicResource GoldBrush}"/>
+        </Trigger>
+      </Style.Triggers>
+    </Style>
+    <Style x:Key="Select" TargetType="ComboBox">
+      <Setter Property="FontFamily" Value="{StaticResource MonoFont}"/>
+      <Setter Property="FontSize" Value="17"/>
+      <Setter Property="Foreground" Value="#141428"/>
+      <Setter Property="Padding" Value="8,3"/>
+    </Style>
+
+  </Application.Resources>
+</Application>

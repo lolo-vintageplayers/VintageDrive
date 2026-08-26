@@ -1,0 +1,14 @@
+{
+  "artboards": [
+    { "file": "Main.dc.html", "x": 0, "y": 0, "w": 1100, "h": 760, "title": "Écran principal" },
+    { "file": "Formater.dc.html", "x": 1200, "y": 0, "w": 1100, "h": 760, "title": "Formater — presets consoles" },
+    { "file": "TestEnCours.dc.html", "x": 2400, "y": 0, "w": 1100, "h": 760, "title": "Test de capacité en cours" },
+    { "file": "VerdictFake.dc.html", "x": 0, "y": 900, "w": 1100, "h": 760, "title": "Verdict — GAME OVER" },
+    { "file": "VerdictOk.dc.html", "x": 1200, "y": 900, "w": 1100, "h": 760, "title": "Verdict — conforme" },
+    { "file": "Themes.dc.html", "x": 2400, "y": 900, "w": 560, "h": 660, "title": "Thèmes" }
+  ],
+  "annotations": [
+    { "id": "contexte-theme", "x": 0, "y": -190, "w": 360, "text": "Thème par défaut — VintagePlayers\nNavy à grille de carrés · pixel-font · or / périwinkle · ombres dures 8-bit · touches magenta/cyan du logo.\nD'après le backoffice (Interface.png), le logo et le site.\nLes bulles « POURQUOI CES RÉGLAGES ? » reprennent les vraies fiches pédagogiques du moteur." }
+  ],
+  "launch": { "view": "canvas" }
+}

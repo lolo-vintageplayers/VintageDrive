@@ -1,0 +1,115 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&family=VT323&display=swap">
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: 'VT323', monospace; color: #EDEDFF; }
+    a { color: #FFD23F; } a:hover { color: #FFE380; }
+    .px { font-family: 'Silkscreen', monospace; }
+    .chip { font-size: 17px; color: #EDEDFF; border: 2px solid #34346A; background: #191938; padding: 3px 11px; }
+    .chipinfo { font-size: 17px; color: #6A6AA8; border: 2px dashed #34346A; background: transparent; padding: 3px 11px; display: inline-flex; align-items: center; gap: 6px; }
+    .cat { font-family: 'Silkscreen', monospace; font-size: 10px; color: #7B7BE8; letter-spacing: 2px; }
+  </style>
+</helmet>
+<div style="width: 1100px; height: 760px; padding: 26px 28px; display: flex; flex-direction: column; gap: 16px; background-color: #0A0A1E; background-image: linear-gradient(rgba(123,123,232,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(123,123,232,0.06) 1px, transparent 1px); background-size: 28px 28px; overflow: hidden;">
+
+  <div style="display: flex; align-items: center; gap: 14px;">
+    <div class="px" style="font-size: 13px; color: #9D9DE8; border: 2px solid #7B7BE8; background: #191938; box-shadow: 3px 3px 0 #000000; padding: 8px 12px;">◀</div>
+    <div class="px" style="font-size: 15px; font-weight: 700; color: #EDEDFF; text-shadow: 2px 2px 0 #000000;">FORMATER — E: « KINGSTON » · 62,1 Go</div>
+    <div style="margin-left: auto; font-size: 16px; color: #6A6AA8;">Kingston DataTraveler 3.0 · USB</div>
+  </div>
+
+  <div style="display: flex; gap: 20px; flex-grow: 1; min-height: 0;">
+
+    <div style="flex: 1.5; display: flex; flex-direction: column; gap: 11px;">
+      <div class="px" style="font-size: 13px; font-weight: 700; color: #FFD23F; letter-spacing: 1px;">▶ CHOISIS TA CONSOLE</div>
+
+      <div class="cat">NINTENDO</div>
+      <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+        <span class="chip">NES</span><span class="chip">SNES</span><span class="chip">N64</span><span class="chip">GameCube</span>
+        <span class="chip" style="border-color: #FFD23F; color: #FFD23F; box-shadow: 2px 2px 0 #000000;">▶ Wii</span>
+        <span class="chip">Wii U</span><span class="chip">Switch</span><span class="chip">GB / GBA</span><span class="chip">DS / DSi</span><span class="chip">3DS</span>
+      </div>
+
+      <div class="cat">SONY</div>
+      <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+        <span class="chip">PS1</span><span class="chip">PS2</span><span class="chip">PS3</span><span class="chip">PS4</span><span class="chip">PSP</span><span class="chip">Vita / PSTV</span>
+      </div>
+
+      <div class="cat">SEGA</div>
+      <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+        <span class="chip">Master System / GG</span><span class="chip">Mega Drive</span><span class="chip">Saturn</span><span class="chip">Dreamcast</span>
+      </div>
+
+      <div class="cat">MICROSOFT</div>
+      <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+        <span class="chipinfo"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#6A6AA8" stroke-width="2"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v5"></path><circle cx="12" cy="7.5" r="0.5" fill="#6A6AA8"></circle></svg>Xbox</span>
+        <span class="chip">Xbox 360</span><span class="chip">Xbox One</span>
+      </div>
+
+      <div class="cat">ATARI · NEC · SNK · AUTRES</div>
+      <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+        <span class="chip">Atari 2600 / 7800</span><span class="chip">Jaguar</span><span class="chip">Lynx</span><span class="chip">PC-Engine</span><span class="chip">Neo Geo</span><span class="chip">EverDrive +</span><span class="chip">MiSTer</span>
+        <span class="chipinfo"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#6A6AA8" stroke-width="2"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v5"></path><circle cx="12" cy="7.5" r="0.5" fill="#6A6AA8"></circle></svg>Batocera</span>
+        <span class="chip">PC</span>
+      </div>
+
+      <div style="margin-top: auto; display: flex; flex-direction: column; gap: 8px;">
+        <div class="px" style="font-size: 11px; font-weight: 700; color: #7B7BE8; letter-spacing: 1px;">▶ MODE LIBRE — RÉGLAGES MANUELS</div>
+        <div style="display: flex; gap: 10px;">
+          <span class="chip" style="border-color: #7B7BE8;">FAT32 ▾</span>
+          <span class="chip" style="border-color: #7B7BE8;">32 Ko ▾</span>
+          <span class="chip" style="border-color: #7B7BE8;">MBR ▾</span>
+          <span class="chip" style="border-color: #7B7BE8; flex-grow: 1;">Nom : KINGSTON</span>
+        </div>
+        <div style="font-size: 15px; color: #6A6AA8;">Modifier un réglage à la main désélectionne le preset — tu reprends le contrôle total.</div>
+      </div>
+    </div>
+
+    <div style="width: 400px; display: flex; flex-direction: column; gap: 14px;">
+      <div style="background: #191938; border: 2px solid #FFD23F; box-shadow: 4px 4px 0 #000000; padding: 16px 18px; display: flex; flex-direction: column; gap: 12px;">
+        <div class="px" style="font-size: 13px; font-weight: 700; color: #FFD23F;">WII / VWII (USB, SD)</div>
+        <div style="display: flex; gap: 8px;">
+          <span style="font-size: 17px; color: #FFD23F; border: 2px solid #FFD23F; padding: 2px 10px;">FAT32</span>
+          <span style="font-size: 17px; color: #FFD23F; border: 2px solid #FFD23F; padding: 2px 10px;">32 Ko</span>
+          <span style="font-size: 17px; color: #FFD23F; border: 2px solid #FFD23F; padding: 2px 10px;">MBR</span>
+        </div>
+        <div style="background: #12122A; border: 2px solid #34346A; padding: 12px 14px; display: flex; flex-direction: column; gap: 8px;">
+          <div style="display: flex; align-items: center; gap: 8px;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#35E0E8" stroke-width="2"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v5"></path><circle cx="12" cy="7.5" r="0.5" fill="#35E0E8"></circle></svg>
+            <span class="px" style="font-size: 10px; color: #35E0E8; letter-spacing: 1px;">POURQUOI CES RÉGLAGES ?</span>
+          </div>
+          <div style="font-size: 17px; line-height: 1.25; color: #9D9DE8;">La Wii ne lit que le FAT32, sur table MBR. Les clusters de 32 Ko sont la valeur validée par USB Loader GX et WiiFlow. Fichiers limités à 4 Go : les loaders découpent les gros jeux (.wbfs) tout seuls — tu n'as rien à faire.</div>
+        </div>
+      </div>
+
+      <div style="background: #2A1220; border: 2px solid #FF3B5C; padding: 12px 14px; display: flex; gap: 10px; align-items: center;">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FF3B5C" stroke-width="2" style="flex-shrink: 0;"><path d="M12 3 2.5 20h19Z"></path><path d="M12 10v4"></path><circle cx="12" cy="17" r="0.5" fill="#FF3B5C"></circle></svg>
+        <span style="font-size: 17px; color: #FFB3C0;">Tout le contenu de E: sera effacé. Une confirmation te sera demandée avant le lancement.</span>
+      </div>
+
+      <div class="px" style="background: #FFD23F; color: #141428; border: 2px solid #0A0A1E; box-shadow: 4px 4px 0 #000000; padding: 16px 12px; font-size: 14px; font-weight: 700; text-align: center;">▶ FORMATER MAINTENANT</div>
+      <div style="font-size: 16px; color: #6A6AA8; text-align: center;">Formatage rapide — environ 10 secondes sur cette clé</div>
+    </div>
+
+  </div>
+
+  <div style="display: flex; align-items: center; gap: 10px; border-top: 2px solid #34346A; padding-top: 9px;">
+    <span class="px" style="font-size: 10px; font-weight: 700; color: #141428; background: #7B7BE8; padding: 3px 8px;">? AIDE</span>
+    <a href="https://www.youtube.com/@vintageplayerss" style="font-size: 16px; color: #FF3B5C; text-decoration: none; border: 1px solid #FF3B5C; padding: 0px 8px;">YOUTUBE</a>
+    <a href="https://discord.gg/d68NjkPRMz" style="font-size: 16px; color: #7B7BE8; text-decoration: none; border: 1px solid #7B7BE8; padding: 0px 8px;">DISCORD</a>
+    <a href="https://vintageplayers.fr" style="font-size: 16px; color: #35E0E8; text-decoration: none; border: 1px solid #35E0E8; padding: 0px 8px;">VINTAGEPLAYERS.FR</a>
+    <span style="margin-left: auto; font-size: 16px; color: #6A6AA8;">v1.0 · thème Vintage Players</span>
+  </div>
+
+</div>
+</x-dc>
+</body>
+</html>

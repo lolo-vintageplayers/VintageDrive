@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&family=VT323&display=swap">
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: 'VT323', monospace; color: #EDEDFF; }
+    a { color: #FFD23F; } a:hover { color: #FFE380; }
+    .px { font-family: 'Silkscreen', monospace; }
+    .sw { width: 22px; height: 22px; border: 1px solid #000000; }
+  </style>
+</helmet>
+<div style="width: 560px; height: 660px; padding: 24px; display: flex; flex-direction: column; gap: 16px; background-color: #0A0A1E; background-image: linear-gradient(rgba(123,123,232,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(123,123,232,0.06) 1px, transparent 1px); background-size: 28px 28px; overflow: hidden;">
+
+  <div class="px" style="font-size: 14px; font-weight: 700; color: #FFD23F; text-shadow: 2px 2px 0 #000000;">▶ THÈMES</div>
+
+  <div style="background: #191938; border: 2px solid #FFD23F; box-shadow: 4px 4px 0 #000000; padding: 16px; display: flex; flex-direction: column; gap: 10px;">
+    <div style="display: flex; align-items: center; gap: 10px;">
+      <span class="px" style="font-size: 12px; font-weight: 700; color: #EDEDFF;">VINTAGE PLAYERS</span>
+      <span class="px" style="margin-left: auto; font-size: 9px; font-weight: 700; color: #141428; background: #FFD23F; padding: 3px 8px;">ACTIF</span>
+    </div>
+    <div style="display: flex; gap: 6px;">
+      <div class="sw" style="background: #0A0A1E;"></div>
+      <div class="sw" style="background: #191938;"></div>
+      <div class="sw" style="background: #7B7BE8;"></div>
+      <div class="sw" style="background: #FFD23F;"></div>
+      <div class="sw" style="background: #FF2E97;"></div>
+      <div class="sw" style="background: #35E0E8;"></div>
+    </div>
+    <div style="font-size: 16px; color: #9D9DE8;">Thème par défaut — par le créateur de l'outil</div>
+  </div>
+
+  <div style="background: #191938; border: 2px solid #34346A; box-shadow: 4px 4px 0 #000000; padding: 16px; display: flex; flex-direction: column; gap: 10px;">
+    <div style="display: flex; align-items: center; gap: 10px;">
+      <span class="px" style="font-size: 12px; font-weight: 700; color: #9AE6A0;">CRT PHOSPHOR</span>
+      <span class="px" style="margin-left: auto; font-size: 9px; color: #9D9DE8; border: 2px solid #7B7BE8; padding: 3px 8px;">ACTIVER</span>
+    </div>
+    <div style="display: flex; gap: 6px;">
+      <div class="sw" style="background: #061206;"></div>
+      <div class="sw" style="background: #0F2410;"></div>
+      <div class="sw" style="background: #1E4620;"></div>
+      <div class="sw" style="background: #2ED573;"></div>
+      <div class="sw" style="background: #9AE6A0;"></div>
+      <div class="sw" style="background: #F2F5DC;"></div>
+    </div>
+    <div style="font-size: 16px; color: #9D9DE8;">Exemple de thème communautaire — vert moniteur d'époque</div>
+  </div>
+
+  <div style="border: 2px dashed #7B7BE8; padding: 16px; display: flex; flex-direction: column; gap: 8px;">
+    <span class="px" style="font-size: 11px; color: #9D9DE8;">+ CRÉER UN THÈME</span>
+    <span style="font-size: 16px; color: #6A6AA8;">Couleurs, police, fond — exporte ton thème en fichier .vdtheme et partage-le à la scène.</span>
+  </div>
+
+  <div style="margin-top: auto; border-top: 2px solid #34346A; padding-top: 12px; font-size: 16px; color: #6A6AA8;">Les meilleurs thèmes de la communauté seront mis en avant dans les vidéos Vintage Players.</div>
+
+</div>
+</x-dc>
+</body>
+</html>

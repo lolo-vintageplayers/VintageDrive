@@ -1,0 +1,50 @@
+<Window x:Class="VintageDrive.App.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="VintageDrive — by Vintage Players"
+        Width="1180" Height="830" MinWidth="1060" MinHeight="720"
+        WindowStartupLocation="CenterScreen"
+        Background="{DynamicResource WindowGridBrush}"
+        UseLayoutRounding="True" SnapsToDevicePixels="True"
+        TextOptions.TextFormattingMode="Display">
+  <Grid>
+    <!-- Contenu principal (flouté quand une fenêtre modale est ouverte) -->
+    <Grid x:Name="RootContent">
+      <Grid.RowDefinitions>
+        <RowDefinition Height="*"/>
+        <RowDefinition Height="Auto"/>
+      </Grid.RowDefinitions>
+
+      <ContentControl x:Name="Screen" Grid.Row="0" Focusable="False"/>
+
+      <!-- Barre d'aide permanente -->
+      <Border Grid.Row="1" BorderThickness="0,2,0,0" BorderBrush="{DynamicResource DimBorderBrush}"
+              Background="{DynamicResource PanelDarkBrush}" Padding="28,8,28,10">
+        <DockPanel LastChildFill="True">
+          <Button DockPanel.Dock="Left" Click="OnAide" Margin="0,0,10,0" Style="{StaticResource FootChip}"
+                  Background="{DynamicResource PeriBrush}" BorderBrush="{DynamicResource PeriBrush}" Padding="8,2">
+            <TextBlock Style="{StaticResource Px}" FontSize="11" FontWeight="Bold"
+                       Foreground="{DynamicResource GoldTextBrush}" Text="? AIDE"/>
+          </Button>
+          <Button DockPanel.Dock="Left" Margin="0,0,10,0" Style="{StaticResource FootChip}"
+                  BorderBrush="{DynamicResource RedBrush}" Click="OnLink" Tag="https://www.youtube.com/@vintageplayerss?sub_confirmation=1">
+            <TextBlock Style="{StaticResource Txt}" FontSize="16" Foreground="{DynamicResource RedBrush}" Text="YOUTUBE"/>
+          </Button>
+          <Button DockPanel.Dock="Left" Margin="0,0,10,0" Style="{StaticResource FootChip}"
+                  BorderBrush="{DynamicResource PeriBrush}" Click="OnLink" Tag="https://discord.gg/d68NjkPRMz">
+            <TextBlock Style="{StaticResource Txt}" FontSize="16" Foreground="{DynamicResource PeriBrush}" Text="DISCORD"/>
+          </Button>
+          <Button DockPanel.Dock="Left" Style="{StaticResource FootChip}"
+                  BorderBrush="{DynamicResource CyanBrush}" Click="OnLink" Tag="https://vintageplayers.fr/">
+            <TextBlock Style="{StaticResource Txt}" FontSize="16" Foreground="{DynamicResource CyanBrush}" Text="VINTAGEPLAYERS.FR"/>
+          </Button>
+          <TextBlock x:Name="FootStatus" Style="{StaticResource Txt}" FontSize="16"
+                     Foreground="{DynamicResource DimBrush}" TextAlignment="Right" VerticalAlignment="Center"/>
+        </DockPanel>
+      </Border>
+    </Grid>
+
+    <!-- Voile sombre au-dessus du contenu flouté, sous les fenêtres modales -->
+    <Border x:Name="DimOverlay" Background="#C9060612" Visibility="Collapsed"/>
+  </Grid>
+</Window>
